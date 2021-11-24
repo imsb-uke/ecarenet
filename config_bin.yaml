@@ -1,0 +1,98 @@
+general:
+  label_type: &label_type bin
+  number_of_classes: &n_classes 2
+  image_directory: &directory /opt/project/unittest_data
+  seed: &seed 8556
+  image_channels: &img_channels 3
+
+# ------  ------  ------  ------  ------  ------  ------
+
+data_generation:
+  # CSV FILES
+  train_csv_file: /opt/project/unittest_data/train.csv # full path to train.csv
+  train_batch_size: 2
+  valid_csv_file: /opt/project/unittest_data/train.csv # full path to valid.csv
+  valid_batch_size: 2
+  test_csv_file: /opt/project/unittest_data/train.csv #  full path to test.csv (or also valid.csv during training)
+  # WHERE TO FIND INFORMATION IN CSV FILE AND WHAT INFORMATION TO USE
+  annotation_column: survived_2years # column of the main class label, as it is called in csv file (isup, bin, relapse_time)
+  additional_columns: # list of dict with
+    # - internal_column_name: ['name_of_column_in_csv', 'input'] if used as additional input (like binary prediction)
+    # - internal_column_name: ['name_of_column_in_csv', 'label'] if used as additional label (like censoring status)
+    # - internal_column_name: ['name_of_column_in_csv', '-'] if just extra information (like age for inspection later)
+  drop_cases: # list of lists
+    # - ['value_to_drop', 'internal_column_name'] if cases should be dropped based on target label (e.g. label -1)
+    # - ['value_to_drop', 'annotation_column'] if cases should be dropped based on additional column (e.g. age 0)
+    - ['-1', 'survived_2years']
+  # IMAGE PREPROCESSING
+  patching:
+    n_patches: &n_patches 0 # integer how many patches to cut (if more than possible, additional patches are white)
+                             # 0 if no patching is wanted
+  augmentation_config:
+    rotation: 90.0
+    width_shift: 0.1 # float
+    height_shift: 0.1 # float
+    brightness: 0.05 # float
+    horizontal_flip: True # True or False (if random, put true to randomly flip or not)
+    vertical_flip: True # True or False (if random, put true to randomly flip or not)
+    fill_mode: constant
+    cval: 255
+  random_augmentation: True # False or True: if the augmentation should be random
+  resize_x: &resize_x 128
+  resize_y: &resize_y 128
+  resize: [*resize_x, *resize_y]   # [1024, 1024]
+  # GENERAL INFORMATION
+  channels: *img_channels
+  directory: *directory
+  label_type: *label_type
+  number_of_classes: *n_classes
+  seed: *seed
+
+# ------  ------  ------  ------  ------  ------  ------
+
+model:
+  name: m_bin
+  base_model: InceptionV3
+  additional_input: # list, e.g. ['bin0', 'bin1'] to add prediction for relapse in first two years yes+no
+  dense_layer_nodes: [32] # list of integers, e.g. [64]
+  rnn_layer_nodes: # list of integers, e.g. [256]
+  keras_model_params:
+    weights: imagenet # None or 'imagenet'
+    input_shape: [*resize_x, *resize_y, *img_channels]
+  n_patches: *n_patches
+  n_classes: *n_classes
+
+
+# ------  ------  ------  ------  ------  ------  ------
+
+training:
+  epochs: 10 # int, how many epochs to train
+  initial_epoch: 0
+  monitor_val: &monitor_val 'val_binary_accuracy' # e.g. 'val_loss'
+  callbacks:
+    - name: EarlyStopping
+      params:
+        patience: 100
+        min_delta: 0.01
+        monitor: *monitor_val
+        restore_best_weights: True
+  optimizer: # dict
+    name: Nadam # String for tf.keras optimizer, e.g. 'Adam',
+    params: # list of additional parameters as dict
+      - learning_rate: 0.001
+  loss_fn: binary_crossentropy
+  compile_metrics:
+    - BinaryAccuracy
+  compile_attributes: {} # dictionary with additional attributes like class_weight
+  model_save_path: /opt/project/experiments # folder where model should be saved
+  class_weight: True
+  weighted_metrics: False
+
+
+# ------  ------  ------  ------  ------  ------  ------
+
+evaluation:
+  metrics:
+    - accuracy
+    - f1_score
+    - kappa

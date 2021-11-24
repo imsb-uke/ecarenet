@@ -1,0 +1,9 @@
+img_path,relapse_time,censored,isup,survived_2years
+example_colors/img_0.png,48.1,0,0,1
+example_colors/img_1.png,53,0,1,1
+example_colors/img_2.png,39,0,2,1
+example_colors/img_3.png,41,1,3,1
+example_colors/img_red_0.png,4.8,0,4,0
+example_colors/img_red_1.png,7,0,5,0
+example_colors/img_red_2.png,13,0,0,0
+example_colors/img_red_3.png,9.8,1,1,0

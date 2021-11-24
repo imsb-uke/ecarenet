@@ -1,0 +1,5 @@
+.idea
+*_venv
+venv
+*__pycache__*
+experiments

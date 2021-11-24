@@ -1,0 +1,111 @@
+general:
+  label_type: &label_type survival
+  number_of_classes: &n_classes 28
+  image_directory: &directory /opt/project/unittest_data
+  seed: &seed 145
+  image_channels: &img_channels 3
+
+# ------  ------  ------  ------  ------  ------  ------
+
+data_generation:
+  # CSV FILES
+  train_csv_file: /opt/project/unittest_data/train.csv # full path to train.csv
+  train_batch_size: 8
+  valid_csv_file: /opt/project/unittest_data/train.csv # full path to valid.csv
+  valid_batch_size: 8
+  test_csv_file: /opt/project/unittest_data/train.csv #  full path to test.csv (or also valid.csv during training)
+  # WHERE TO FIND INFORMATION IN CSV FILE AND WHAT INFORMATION TO USE
+  annotation_column: relapse_time # column of the main class label, as it is called in csv file (isup, bin, relapse_time)
+  additional_columns: # list of dict with
+    # - internal_column_name: ['name_of_column_in_csv', 'input'] if used as additional input (like binary prediction)
+    # - internal_column_name: ['name_of_column_in_csv', 'label'] if used as additional label (like censoring status)
+    # - internal_column_name: ['name_of_column_in_csv', '-'] if just extra information (like age for inspection later)
+    - censored: ['censored', 'label']
+    - original_label: ['relapse_time', '-']
+    #- year_0: ['pred_survived_2y_0', 'input']
+    #- year_1: ['pred_survived_2y_1', 'input']
+  drop_cases: # list of lists
+    # - ['value_to_drop', 'internal_column_name'] if cases should be dropped based on target label (e.g. label -1)
+    # - ['value_to_drop', 'annotation_column'] if cases should be dropped based on additional column (e.g. age 0)
+    - ['-1', 'relapse_time']
+    - ['-1', 'censored']
+  # IMAGE PREPROCESSING
+  patching:
+    n_patches: &n_patches 16 # integer how many patches to cut (if more than possible, additional patches are white)
+                             # 0 if no patching is wanted
+    patch_size: 256 # integer width and height of patch
+    overlap: 0 # integer (0)
+    order: original # string: shuffle, original, ranked, shuffle_ranked
+    keep_original: False # False or integer, if in addition to patches, the original image should be kept in dataset too
+  augmentation_config:
+    rotation: 0.0
+    width_shift: 0. # float
+    height_shift: 0. # float
+    brightness: 0.0 # float
+    horizontal_flip: True # True or False (if random, put true to randomly flip or not)
+    vertical_flip: True # True or False (if random, put true to randomly flip or not)
+    fill_mode: constant
+    cval: 255
+  random_augmentation: True # False or True: if the augmentation should be random
+  resize_x: &resize_x 128
+  resize_y: &resize_y 128
+  resize: [*resize_x, *resize_y]   # [1024, 1024]
+  # GENERAL INFORMATION
+  channels: *img_channels
+  directory: *directory
+  label_type: *label_type
+  number_of_classes: *n_classes
+  seed: *seed
+
+# ------  ------  ------  ------  ------  ------  ------
+
+model:
+  name: ecare_net
+  base_model: InceptionV3 # '/opt/project/experiments/2' #
+  additional_input: # list, e.g. ['bin0', 'bin1'] to add prediction for relapse in first two years yes+no
+  dense_layer_nodes: [64] # list of integers, e.g. [64]
+  rnn_layer_nodes: [256] # list of integers, e.g. [256]
+  keras_model_params:
+    weights:  # None (leave empty) or 'imagenet'
+    input_shape: [*resize_x, *resize_y, *img_channels]
+  n_patches: *n_patches
+  n_classes: *n_classes
+  # only used for survival model
+  mil_layer: True # boolean
+  self_attention: True # boolean
+  cut_off_layer: 'mixed4'
+
+
+# ------  ------  ------  ------  ------  ------  ------
+
+training:
+  epochs: 10 # int, how many epochs to train
+  initial_epoch: 0
+  monitor_val: &monitor_val 'val_loss'
+  callbacks:
+    - name: EarlyStopping
+      params:
+        patience: 100
+        min_delta: 0.001
+        monitor: *monitor_val
+        restore_best_weights: True
+  optimizer: # dict
+    name: Nadam # String for tf.keras optimizer, e.g. 'Adam',
+    params: # list of additional parameters as dict
+      - learning_rate: 0.001
+  loss_fn: ecarenet_loss
+  compile_metrics:
+  compile_attributes: {} # dictionary with additional attributes like class_weight
+  model_save_path: /opt/project/experiments # folder where model should be saved
+  class_weight: False
+  weighted_metrics: False
+
+
+# ------  ------  ------  ------  ------  ------  ------
+
+evaluation:
+  metrics:
+    - auc
+    - brier
+    - c_index
+    - d_calibration

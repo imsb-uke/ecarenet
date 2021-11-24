@@ -1,0 +1,133 @@
+{
+  "data_generation": {
+    "additional_columns": [
+      {
+        "censored": [
+          "censored",
+          "label"
+        ]
+      },
+      {
+        "original_label": [
+          "relapse_time",
+          "-"
+        ]
+      }
+    ],
+    "annotation_column": "relapse_time",
+    "augmentation_config": {
+      "brightness": 0.05,
+      "cval": 255,
+      "fill_mode": "constant",
+      "height_shift": 0.1,
+      "horizontal_flip": true,
+      "rotation": 90.0,
+      "vertical_flip": true,
+      "width_shift": 0.1
+    },
+    "channels": 3,
+    "directory": "/opt/project/unittest_data",
+    "drop_cases": [
+      [
+        "-1",
+        "relapse_time"
+      ],
+      [
+        "-1",
+        "censored"
+      ]
+    ],
+    "label_type": "survival",
+    "number_of_classes": 10,
+    "patching": {
+      "keep_original": false,
+      "n_patches": 4,
+      "order": "original",
+      "overlap": 0,
+      "patch_size": 512
+    },
+    "random_augmentation": true,
+    "resize": [
+      128,
+      128
+    ],
+    "resize_x": 128,
+    "resize_y": 128,
+    "seed": 8556,
+    "test_csv_file": "/opt/project/unittest_data/train.csv",
+    "train_batch_size": 2,
+    "train_csv_file": "/opt/project/unittest_data/train.csv",
+    "valid_batch_size": 2,
+    "valid_csv_file": "/opt/project/unittest_data/train.csv"
+  },
+  "evaluation": {
+    "metrics": [
+      "auc",
+      "brier",
+      "c_index",
+      "d_calibration"
+    ]
+  },
+  "general": {
+    "image_channels": 3,
+    "image_directory": "/opt/project/unittest_data",
+    "label_type": "survival",
+    "number_of_classes": 10,
+    "seed": 8556
+  },
+  "model": {
+    "additional_input": null,
+    "base_model": "/opt/project/experiments/11",
+    "cut_off_layer": "mixed4",
+    "dense_layer_nodes": [
+      32
+    ],
+    "keras_model_params": {
+      "input_shape": [
+        128,
+        128,
+        3
+      ],
+      "weights": "imagenet"
+    },
+    "mil_layer": true,
+    "n_classes": 10,
+    "n_patches": 4,
+    "name": "ecare_net",
+    "rnn_layer_nodes": [
+      32
+    ],
+    "self_attention": false
+  },
+  "seed": 486175343,
+  "training": {
+    "callbacks": [
+      {
+        "name": "EarlyStopping",
+        "params": {
+          "min_delta": 0.01,
+          "monitor": "val_loss",
+          "patience": 100,
+          "restore_best_weights": true
+        }
+      }
+    ],
+    "class_weight": false,
+    "compile_attributes": {},
+    "compile_metrics": null,
+    "epochs": 10,
+    "initial_epoch": 0,
+    "loss_fn": "ecarenet_loss",
+    "model_save_path": "/opt/project/experiments",
+    "monitor_val": "val_loss",
+    "optimizer": {
+      "name": "Nadam",
+      "params": [
+        {
+          "learning_rate": 0.001
+        }
+      ]
+    },
+    "weighted_metrics": false
+  }
+}

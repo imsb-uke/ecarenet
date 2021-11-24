@@ -1,0 +1,472 @@
+INFO - ecarenet - Running command 'main'
+INFO - ecarenet - Started run with ID "67"
+2021-11-05 11:44:02.960521: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-11-05 11:44:02.960689: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcuda.so.1
+2021-11-05 11:44:02.961556: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:21:00.0 name: Quadro P1000 computeCapability: 6.1
+coreClock: 1.4805GHz coreCount: 5 deviceMemorySize: 3.94GiB deviceMemoryBandwidth: 74.65GiB/s
+2021-11-05 11:44:02.961610: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+2021-11-05 11:44:02.967424: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.11
+2021-11-05 11:44:02.967608: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.11
+2021-11-05 11:44:02.969325: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2021-11-05 11:44:02.969715: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2021-11-05 11:44:02.973744: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.10
+2021-11-05 11:44:02.974868: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.11
+2021-11-05 11:44:02.975166: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.8
+2021-11-05 11:44:02.976163: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0
+INFO - main - Num GPUs Available: 1
+2021-11-05 11:44:02.976579: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-11-05 11:44:02.977253: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-11-05 11:44:02.977831: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:21:00.0 name: Quadro P1000 computeCapability: 6.1
+coreClock: 1.4805GHz coreCount: 5 deviceMemorySize: 3.94GiB deviceMemoryBandwidth: 74.65GiB/s
+2021-11-05 11:44:02.977860: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+2021-11-05 11:44:02.977901: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.11
+2021-11-05 11:44:02.977926: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.11
+2021-11-05 11:44:02.977949: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2021-11-05 11:44:02.977974: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2021-11-05 11:44:02.978003: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.10
+2021-11-05 11:44:02.978032: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.11
+2021-11-05 11:44:02.978058: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.8
+2021-11-05 11:44:02.978691: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0
+2021-11-05 11:44:02.978720: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+2021-11-05 11:44:03.396578: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-11-05 11:44:03.396604: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      0 
+2021-11-05 11:44:03.396610: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 0:   N 
+2021-11-05 11:44:03.397552: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/device:GPU:0 with 2887 MB memory) -> physical GPU (device: 0, name: Quadro P1000, pci bus id: 0000:21:00.0, compute capability: 6.1)
+INFO - main - tensorflow version 2.4.3
+2021-11-05 11:44:03.420761: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-11-05 11:44:03.421184: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:21:00.0 name: Quadro P1000 computeCapability: 6.1
+coreClock: 1.4805GHz coreCount: 5 deviceMemorySize: 3.94GiB deviceMemoryBandwidth: 74.65GiB/s
+2021-11-05 11:44:03.421212: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+2021-11-05 11:44:03.421243: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.11
+2021-11-05 11:44:03.421253: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.11
+2021-11-05 11:44:03.421264: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2021-11-05 11:44:03.421277: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2021-11-05 11:44:03.421296: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.10
+2021-11-05 11:44:03.421309: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.11
+2021-11-05 11:44:03.421323: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.8
+2021-11-05 11:44:03.421821: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0
+2021-11-05 11:44:03.421845: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-11-05 11:44:03.421850: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      0 
+2021-11-05 11:44:03.421855: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 0:   N 
+2021-11-05 11:44:03.422346: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2887 MB memory) -> physical GPU (device: 0, name: Quadro P1000, pci bus id: 0000:21:00.0, compute capability: 6.1)
+number of records in training data set: 8
+number of records in validation dataset: 8
+(None, 128, 128, 3)
+INFO - root - model successfully compiled with optimizer {'name': 'Nadam', 'params': [{'learning_rate': 0.001}]} <tensorflow.python.keras.optimizer_v2.nadam.Nadam object at 0x7faae02dd5f8>
+Model: "model"
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_1 (InputLayer)            [(None, 128, 128, 3) 0                                            
+__________________________________________________________________________________________________
+conv2d (Conv2D)                 (None, 63, 63, 32)   864         input_1[0][0]                    
+__________________________________________________________________________________________________
+batch_normalization (BatchNorma (None, 63, 63, 32)   96          conv2d[0][0]                     
+__________________________________________________________________________________________________
+activation (Activation)         (None, 63, 63, 32)   0           batch_normalization[0][0]        
+__________________________________________________________________________________________________
+conv2d_1 (Conv2D)               (None, 61, 61, 32)   9216        activation[0][0]                 
+__________________________________________________________________________________________________
+batch_normalization_1 (BatchNor (None, 61, 61, 32)   96          conv2d_1[0][0]                   
+__________________________________________________________________________________________________
+activation_1 (Activation)       (None, 61, 61, 32)   0           batch_normalization_1[0][0]      
+__________________________________________________________________________________________________
+conv2d_2 (Conv2D)               (None, 61, 61, 64)   18432       activation_1[0][0]               
+__________________________________________________________________________________________________
+batch_normalization_2 (BatchNor (None, 61, 61, 64)   192         conv2d_2[0][0]                   
+__________________________________________________________________________________________________
+activation_2 (Activation)       (None, 61, 61, 64)   0           batch_normalization_2[0][0]      
+__________________________________________________________________________________________________
+max_pooling2d (MaxPooling2D)    (None, 30, 30, 64)   0           activation_2[0][0]               
+__________________________________________________________________________________________________
+conv2d_3 (Conv2D)               (None, 30, 30, 80)   5120        max_pooling2d[0][0]              
+__________________________________________________________________________________________________
+batch_normalization_3 (BatchNor (None, 30, 30, 80)   240         conv2d_3[0][0]                   
+__________________________________________________________________________________________________
+activation_3 (Activation)       (None, 30, 30, 80)   0           batch_normalization_3[0][0]      
+__________________________________________________________________________________________________
+conv2d_4 (Conv2D)               (None, 28, 28, 192)  138240      activation_3[0][0]               
+__________________________________________________________________________________________________
+batch_normalization_4 (BatchNor (None, 28, 28, 192)  576         conv2d_4[0][0]                   
+__________________________________________________________________________________________________
+activation_4 (Activation)       (None, 28, 28, 192)  0           batch_normalization_4[0][0]      
+__________________________________________________________________________________________________
+max_pooling2d_1 (MaxPooling2D)  (None, 13, 13, 192)  0           activation_4[0][0]               
+__________________________________________________________________________________________________
+conv2d_8 (Conv2D)               (None, 13, 13, 64)   12288       max_pooling2d_1[0][0]            
+__________________________________________________________________________________________________
+batch_normalization_8 (BatchNor (None, 13, 13, 64)   192         conv2d_8[0][0]                   
+__________________________________________________________________________________________________
+activation_8 (Activation)       (None, 13, 13, 64)   0           batch_normalization_8[0][0]      
+__________________________________________________________________________________________________
+conv2d_6 (Conv2D)               (None, 13, 13, 48)   9216        max_pooling2d_1[0][0]            
+__________________________________________________________________________________________________
+conv2d_9 (Conv2D)               (None, 13, 13, 96)   55296       activation_8[0][0]               
+__________________________________________________________________________________________________
+batch_normalization_6 (BatchNor (None, 13, 13, 48)   144         conv2d_6[0][0]                   
+__________________________________________________________________________________________________
+batch_normalization_9 (BatchNor (None, 13, 13, 96)   288         conv2d_9[0][0]                   
+__________________________________________________________________________________________________
+activation_6 (Activation)       (None, 13, 13, 48)   0           batch_normalization_6[0][0]      
+__________________________________________________________________________________________________
+activation_9 (Activation)       (None, 13, 13, 96)   0           batch_normalization_9[0][0]      
+__________________________________________________________________________________________________
+average_pooling2d (AveragePooli (None, 13, 13, 192)  0           max_pooling2d_1[0][0]            
+__________________________________________________________________________________________________
+conv2d_5 (Conv2D)               (None, 13, 13, 64)   12288       max_pooling2d_1[0][0]            
+__________________________________________________________________________________________________
+conv2d_7 (Conv2D)               (None, 13, 13, 64)   76800       activation_6[0][0]               
+__________________________________________________________________________________________________
+conv2d_10 (Conv2D)              (None, 13, 13, 96)   82944       activation_9[0][0]               
+__________________________________________________________________________________________________
+conv2d_11 (Conv2D)              (None, 13, 13, 32)   6144        average_pooling2d[0][0]          
+__________________________________________________________________________________________________
+batch_normalization_5 (BatchNor (None, 13, 13, 64)   192         conv2d_5[0][0]                   
+__________________________________________________________________________________________________
+batch_normalization_7 (BatchNor (None, 13, 13, 64)   192         conv2d_7[0][0]                   
+__________________________________________________________________________________________________
+batch_normalization_10 (BatchNo (None, 13, 13, 96)   288         conv2d_10[0][0]                  
+__________________________________________________________________________________________________
+batch_normalization_11 (BatchNo (None, 13, 13, 32)   96          conv2d_11[0][0]                  
+__________________________________________________________________________________________________
+activation_5 (Activation)       (None, 13, 13, 64)   0           batch_normalization_5[0][0]      
+__________________________________________________________________________________________________
+activation_7 (Activation)       (None, 13, 13, 64)   0           batch_normalization_7[0][0]      
+__________________________________________________________________________________________________
+activation_10 (Activation)      (None, 13, 13, 96)   0           batch_normalization_10[0][0]     
+__________________________________________________________________________________________________
+activation_11 (Activation)      (None, 13, 13, 32)   0           batch_normalization_11[0][0]     
+__________________________________________________________________________________________________
+mixed0 (Concatenate)            (None, 13, 13, 256)  0           activation_5[0][0]               
+                                                                 activation_7[0][0]               
+                                                                 activation_10[0][0]              
+                                                                 activation_11[0][0]              
+__________________________________________________________________________________________________
+conv2d_15 (Conv2D)              (None, 13, 13, 64)   16384       mixed0[0][0]                     
+__________________________________________________________________________________________________
+batch_normalization_15 (BatchNo (None, 13, 13, 64)   192         conv2d_15[0][0]                  
+__________________________________________________________________________________________________
+activation_15 (Activation)      (None, 13, 13, 64)   0           batch_normalization_15[0][0]     
+__________________________________________________________________________________________________
+conv2d_13 (Conv2D)              (None, 13, 13, 48)   12288       mixed0[0][0]                     
+__________________________________________________________________________________________________
+conv2d_16 (Conv2D)              (None, 13, 13, 96)   55296       activation_15[0][0]              
+__________________________________________________________________________________________________
+batch_normalization_13 (BatchNo (None, 13, 13, 48)   144         conv2d_13[0][0]                  
+__________________________________________________________________________________________________
+batch_normalization_16 (BatchNo (None, 13, 13, 96)   288         conv2d_16[0][0]                  
+__________________________________________________________________________________________________
+activation_13 (Activation)      (None, 13, 13, 48)   0           batch_normalization_13[0][0]     
+__________________________________________________________________________________________________
+activation_16 (Activation)      (None, 13, 13, 96)   0           batch_normalization_16[0][0]     
+__________________________________________________________________________________________________
+average_pooling2d_1 (AveragePoo (None, 13, 13, 256)  0           mixed0[0][0]                     
+__________________________________________________________________________________________________
+conv2d_12 (Conv2D)              (None, 13, 13, 64)   16384       mixed0[0][0]                     
+__________________________________________________________________________________________________
+conv2d_14 (Conv2D)              (None, 13, 13, 64)   76800       activation_13[0][0]              
+__________________________________________________________________________________________________
+conv2d_17 (Conv2D)              (None, 13, 13, 96)   82944       activation_16[0][0]              
+__________________________________________________________________________________________________
+conv2d_18 (Conv2D)              (None, 13, 13, 64)   16384       average_pooling2d_1[0][0]        
+__________________________________________________________________________________________________
+batch_normalization_12 (BatchNo (None, 13, 13, 64)   192         conv2d_12[0][0]                  
+__________________________________________________________________________________________________
+batch_normalization_14 (BatchNo (None, 13, 13, 64)   192         conv2d_14[0][0]                  
+__________________________________________________________________________________________________
+batch_normalization_17 (BatchNo (None, 13, 13, 96)   288         conv2d_17[0][0]                  
+__________________________________________________________________________________________________
+batch_normalization_18 (BatchNo (None, 13, 13, 64)   192         conv2d_18[0][0]                  
+__________________________________________________________________________________________________
+activation_12 (Activation)      (None, 13, 13, 64)   0           batch_normalization_12[0][0]     
+__________________________________________________________________________________________________
+activation_14 (Activation)      (None, 13, 13, 64)   0           batch_normalization_14[0][0]     
+__________________________________________________________________________________________________
+activation_17 (Activation)      (None, 13, 13, 96)   0           batch_normalization_17[0][0]     
+__________________________________________________________________________________________________
+activation_18 (Activation)      (None, 13, 13, 64)   0           batch_normalization_18[0][0]     
+__________________________________________________________________________________________________
+mixed1 (Concatenate)            (None, 13, 13, 288)  0           activation_12[0][0]              
+                                                                 activation_14[0][0]              
+                                                                 activation_17[0][0]              
+                                                                 activation_18[0][0]              
+__________________________________________________________________________________________________
+conv2d_22 (Conv2D)              (None, 13, 13, 64)   18432       mixed1[0][0]                     
+__________________________________________________________________________________________________
+batch_normalization_22 (BatchNo (None, 13, 13, 64)   192         conv2d_22[0][0]                  
+__________________________________________________________________________________________________
+activation_22 (Activation)      (None, 13, 13, 64)   0           batch_normalization_22[0][0]     
+__________________________________________________________________________________________________
+conv2d_20 (Conv2D)              (None, 13, 13, 48)   13824       mixed1[0][0]                     
+__________________________________________________________________________________________________
+conv2d_23 (Conv2D)              (None, 13, 13, 96)   55296       activation_22[0][0]              
+__________________________________________________________________________________________________
+batch_normalization_20 (BatchNo (None, 13, 13, 48)   144         conv2d_20[0][0]                  
+__________________________________________________________________________________________________
+batch_normalization_23 (BatchNo (None, 13, 13, 96)   288         conv2d_23[0][0]                  
+__________________________________________________________________________________________________
+activation_20 (Activation)      (None, 13, 13, 48)   0           batch_normalization_20[0][0]     
+__________________________________________________________________________________________________
+activation_23 (Activation)      (None, 13, 13, 96)   0           batch_normalization_23[0][0]     
+__________________________________________________________________________________________________
+average_pooling2d_2 (AveragePoo (None, 13, 13, 288)  0           mixed1[0][0]                     
+__________________________________________________________________________________________________
+conv2d_19 (Conv2D)              (None, 13, 13, 64)   18432       mixed1[0][0]                     
+__________________________________________________________________________________________________
+conv2d_21 (Conv2D)              (None, 13, 13, 64)   76800       activation_20[0][0]              
+__________________________________________________________________________________________________
+conv2d_24 (Conv2D)              (None, 13, 13, 96)   82944       activation_23[0][0]              
+__________________________________________________________________________________________________
+conv2d_25 (Conv2D)              (None, 13, 13, 64)   18432       average_pooling2d_2[0][0]        
+__________________________________________________________________________________________________
+batch_normalization_19 (BatchNo (None, 13, 13, 64)   192         conv2d_19[0][0]                  
+__________________________________________________________________________________________________
+batch_normalization_21 (BatchNo (None, 13, 13, 64)   192         conv2d_21[0][0]                  
+__________________________________________________________________________________________________
+batch_normalization_24 (BatchNo (None, 13, 13, 96)   288         conv2d_24[0][0]                  
+__________________________________________________________________________________________________
+batch_normalization_25 (BatchNo (None, 13, 13, 64)   192         conv2d_25[0][0]                  
+__________________________________________________________________________________________________
+activation_19 (Activation)      (None, 13, 13, 64)   0           batch_normalization_19[0][0]     
+__________________________________________________________________________________________________
+activation_21 (Activation)      (None, 13, 13, 64)   0           batch_normalization_21[0][0]     
+__________________________________________________________________________________________________
+activation_24 (Activation)      (None, 13, 13, 96)   0           batch_normalization_24[0][0]     
+__________________________________________________________________________________________________
+activation_25 (Activation)      (None, 13, 13, 64)   0           batch_normalization_25[0][0]     
+__________________________________________________________________________________________________
+mixed2 (Concatenate)            (None, 13, 13, 288)  0           activation_19[0][0]              
+                                                                 activation_21[0][0]              
+                                                                 activation_24[0][0]              
+                                                                 activation_25[0][0]              
+__________________________________________________________________________________________________
+conv2d_27 (Conv2D)              (None, 13, 13, 64)   18432       mixed2[0][0]                     
+__________________________________________________________________________________________________
+batch_normalization_27 (BatchNo (None, 13, 13, 64)   192         conv2d_27[0][0]                  
+__________________________________________________________________________________________________
+activation_27 (Activation)      (None, 13, 13, 64)   0           batch_normalization_27[0][0]     
+__________________________________________________________________________________________________
+conv2d_28 (Conv2D)              (None, 13, 13, 96)   55296       activation_27[0][0]              
+__________________________________________________________________________________________________
+batch_normalization_28 (BatchNo (None, 13, 13, 96)   288         conv2d_28[0][0]                  
+__________________________________________________________________________________________________
+activation_28 (Activation)      (None, 13, 13, 96)   0           batch_normalization_28[0][0]     
+__________________________________________________________________________________________________
+conv2d_26 (Conv2D)              (None, 6, 6, 384)    995328      mixed2[0][0]                     
+__________________________________________________________________________________________________
+conv2d_29 (Conv2D)              (None, 6, 6, 96)     82944       activation_28[0][0]              
+__________________________________________________________________________________________________
+batch_normalization_26 (BatchNo (None, 6, 6, 384)    1152        conv2d_26[0][0]                  
+__________________________________________________________________________________________________
+batch_normalization_29 (BatchNo (None, 6, 6, 96)     288         conv2d_29[0][0]                  
+__________________________________________________________________________________________________
+activation_26 (Activation)      (None, 6, 6, 384)    0           batch_normalization_26[0][0]     
+__________________________________________________________________________________________________
+activation_29 (Activation)      (None, 6, 6, 96)     0           batch_normalization_29[0][0]     
+__________________________________________________________________________________________________
+max_pooling2d_2 (MaxPooling2D)  (None, 6, 6, 288)    0           mixed2[0][0]                     
+__________________________________________________________________________________________________
+mixed3 (Concatenate)            (None, 6, 6, 768)    0           activation_26[0][0]              
+                                                                 activation_29[0][0]              
+                                                                 max_pooling2d_2[0][0]            
+__________________________________________________________________________________________________
+conv2d_34 (Conv2D)              (None, 6, 6, 128)    98304       mixed3[0][0]                     
+__________________________________________________________________________________________________
+batch_normalization_34 (BatchNo (None, 6, 6, 128)    384         conv2d_34[0][0]                  
+__________________________________________________________________________________________________
+activation_34 (Activation)      (None, 6, 6, 128)    0           batch_normalization_34[0][0]     
+__________________________________________________________________________________________________
+conv2d_35 (Conv2D)              (None, 6, 6, 128)    114688      activation_34[0][0]              
+__________________________________________________________________________________________________
+batch_normalization_35 (BatchNo (None, 6, 6, 128)    384         conv2d_35[0][0]                  
+__________________________________________________________________________________________________
+activation_35 (Activation)      (None, 6, 6, 128)    0           batch_normalization_35[0][0]     
+__________________________________________________________________________________________________
+conv2d_31 (Conv2D)              (None, 6, 6, 128)    98304       mixed3[0][0]                     
+__________________________________________________________________________________________________
+conv2d_36 (Conv2D)              (None, 6, 6, 128)    114688      activation_35[0][0]              
+__________________________________________________________________________________________________
+batch_normalization_31 (BatchNo (None, 6, 6, 128)    384         conv2d_31[0][0]                  
+__________________________________________________________________________________________________
+batch_normalization_36 (BatchNo (None, 6, 6, 128)    384         conv2d_36[0][0]                  
+__________________________________________________________________________________________________
+activation_31 (Activation)      (None, 6, 6, 128)    0           batch_normalization_31[0][0]     
+__________________________________________________________________________________________________
+activation_36 (Activation)      (None, 6, 6, 128)    0           batch_normalization_36[0][0]     
+__________________________________________________________________________________________________
+conv2d_32 (Conv2D)              (None, 6, 6, 128)    114688      activation_31[0][0]              
+__________________________________________________________________________________________________
+conv2d_37 (Conv2D)              (None, 6, 6, 128)    114688      activation_36[0][0]              
+__________________________________________________________________________________________________
+batch_normalization_32 (BatchNo (None, 6, 6, 128)    384         conv2d_32[0][0]                  
+__________________________________________________________________________________________________
+batch_normalization_37 (BatchNo (None, 6, 6, 128)    384         conv2d_37[0][0]                  
+__________________________________________________________________________________________________
+activation_32 (Activation)      (None, 6, 6, 128)    0           batch_normalization_32[0][0]     
+__________________________________________________________________________________________________
+activation_37 (Activation)      (None, 6, 6, 128)    0           batch_normalization_37[0][0]     
+__________________________________________________________________________________________________
+average_pooling2d_3 (AveragePoo (None, 6, 6, 768)    0           mixed3[0][0]                     
+__________________________________________________________________________________________________
+conv2d_30 (Conv2D)              (None, 6, 6, 192)    147456      mixed3[0][0]                     
+__________________________________________________________________________________________________
+conv2d_33 (Conv2D)              (None, 6, 6, 192)    172032      activation_32[0][0]              
+__________________________________________________________________________________________________
+conv2d_38 (Conv2D)              (None, 6, 6, 192)    172032      activation_37[0][0]              
+__________________________________________________________________________________________________
+conv2d_39 (Conv2D)              (None, 6, 6, 192)    147456      average_pooling2d_3[0][0]        
+__________________________________________________________________________________________________
+batch_normalization_30 (BatchNo (None, 6, 6, 192)    576         conv2d_30[0][0]                  
+__________________________________________________________________________________________________
+batch_normalization_33 (BatchNo (None, 6, 6, 192)    576         conv2d_33[0][0]                  
+__________________________________________________________________________________________________
+batch_normalization_38 (BatchNo (None, 6, 6, 192)    576         conv2d_38[0][0]                  
+__________________________________________________________________________________________________
+batch_normalization_39 (BatchNo (None, 6, 6, 192)    576         conv2d_39[0][0]                  
+__________________________________________________________________________________________________
+activation_30 (Activation)      (None, 6, 6, 192)    0           batch_normalization_30[0][0]     
+__________________________________________________________________________________________________
+activation_33 (Activation)      (None, 6, 6, 192)    0           batch_normalization_33[0][0]     
+__________________________________________________________________________________________________
+activation_38 (Activation)      (None, 6, 6, 192)    0           batch_normalization_38[0][0]     
+__________________________________________________________________________________________________
+activation_39 (Activation)      (None, 6, 6, 192)    0           batch_normalization_39[0][0]     
+__________________________________________________________________________________________________
+mixed4 (Concatenate)            (None, 6, 6, 768)    0           activation_30[0][0]              
+                                                                 activation_33[0][0]              
+                                                                 activation_38[0][0]              
+                                                                 activation_39[0][0]              
+__________________________________________________________________________________________________
+global_average_pooling2d (Globa (None, 768)          0           mixed4[0][0]                     
+__________________________________________________________________________________________________
+tf.reshape (TFOpLambda)         (None, 16, 768)      0           global_average_pooling2d[0][0]   
+__________________________________________________________________________________________________
+key (Conv1D)                    (None, 16, 96)       73824       tf.reshape[0][0]                 
+__________________________________________________________________________________________________
+query (Conv1D)                  (None, 16, 96)       73824       tf.reshape[0][0]                 
+__________________________________________________________________________________________________
+tf.compat.v1.transpose (TFOpLam (None, 96, 16)       0           key[0][0]                        
+__________________________________________________________________________________________________
+tf.einsum (TFOpLambda)          (None, 16, 16)       0           query[0][0]                      
+                                                                 tf.compat.v1.transpose[0][0]     
+__________________________________________________________________________________________________
+tf.math.reduce_max (TFOpLambda) (None, 16, 1)        0           tf.einsum[0][0]                  
+__________________________________________________________________________________________________
+tf.math.subtract (TFOpLambda)   (None, 16, 16)       0           tf.einsum[0][0]                  
+                                                                 tf.math.reduce_max[0][0]         
+__________________________________________________________________________________________________
+tf.math.exp (TFOpLambda)        (None, 16, 16)       0           tf.math.subtract[0][0]           
+__________________________________________________________________________________________________
+tf.math.reduce_sum (TFOpLambda) (None, 16, 1)        0           tf.math.exp[0][0]                
+__________________________________________________________________________________________________
+tf.math.truediv (TFOpLambda)    (None, 16, 16)       0           tf.math.exp[0][0]                
+                                                                 tf.math.reduce_sum[0][0]         
+__________________________________________________________________________________________________
+value (Conv1D)                  (None, 16, 768)      590592      tf.reshape[0][0]                 
+__________________________________________________________________________________________________
+tf.einsum_1 (TFOpLambda)        (None, 16, 768)      0           tf.math.truediv[0][0]            
+                                                                 value[0][0]                      
+__________________________________________________________________________________________________
+const_multiplier_layer (ConstMu (None, 16, 768)      1           tf.einsum_1[0][0]                
+__________________________________________________________________________________________________
+input_time (InputLayer)         [(None, 28)]         0                                            
+__________________________________________________________________________________________________
+tf.__operators__.add (TFOpLambd (None, 16, 768)      0           const_multiplier_layer[0][0]     
+                                                                 tf.reshape[0][0]                 
+__________________________________________________________________________________________________
+tf.repeat (TFOpLambda)          (None, 28)           0           input_time[0][0]                 
+__________________________________________________________________________________________________
+tf.reshape_1 (TFOpLambda)       (None, 768)          0           tf.__operators__.add[0][0]       
+__________________________________________________________________________________________________
+tf.expand_dims (TFOpLambda)     (None, 28, 1)        0           tf.repeat[0][0]                  
+__________________________________________________________________________________________________
+add_time_dimension (RepeatVecto (None, 28, 768)      0           tf.reshape_1[0][0]               
+__________________________________________________________________________________________________
+tf.concat (TFOpLambda)          (None, 28, 769)      0           tf.expand_dims[0][0]             
+                                                                 add_time_dimension[0][0]         
+__________________________________________________________________________________________________
+gru (GRU)                       (None, 28, 256)      788736      tf.concat[0][0]                  
+__________________________________________________________________________________________________
+dense (Dense)                   (None, 28, 64)       16448       gru[0][0]                        
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (None, 28, 1)        65          dense[0][0]                      
+__________________________________________________________________________________________________
+flatten (Flatten)               (None, 28)           0           dense_1[0][0]                    
+__________________________________________________________________________________________________
+tf.reshape_2 (TFOpLambda)       (None, 16, 28)       0           flatten[0][0]                    
+__________________________________________________________________________________________________
+time_distributed (TimeDistribut (None, 16, 128)      3712        tf.reshape_2[0][0]               
+__________________________________________________________________________________________________
+time_distributed_1 (TimeDistrib (None, 16, 128)      0           time_distributed[0][0]           
+__________________________________________________________________________________________________
+tf.math.multiply (TFOpLambda)   (None, 16, 128)      0           time_distributed_1[0][0]         
+__________________________________________________________________________________________________
+time_distributed_2 (TimeDistrib (None, 16, 1)        129         tf.math.multiply[0][0]           
+__________________________________________________________________________________________________
+permute (Permute)               (None, 1, 16)        0           time_distributed_2[0][0]         
+__________________________________________________________________________________________________
+attention_softmax (TimeDistribu (None, 1, 16)        0           permute[0][0]                    
+__________________________________________________________________________________________________
+tf.einsum_2 (TFOpLambda)        (None, 28)           0           attention_softmax[0][0]          
+                                                                 tf.reshape_2[0][0]               
+==================================================================================================
+Total params: 4,993,251
+Trainable params: 4,985,187
+Non-trainable params: 8,064
+__________________________________________________________________________________________________
+
+  0%|          | 0/1 [00:00<?, ?it/s]2021-11-05 11:44:07.215493: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:116] None of the MLIR optimization passes are enabled (registered 2)
+2021-11-05 11:44:07.235019: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 3600000000 Hz
+2021-11-05 11:44:08.153171: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.8
+2021-11-05 11:44:08.978449: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.11
+2021-11-05 11:44:09.168894: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.11
+
+20it [00:05,  3.76it/s]              
+                       
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+20it [00:01, 19.44it/s]              
+                       
+6.687277793884277
+Epoch 000  -       loss: 2.2058   
+Validation -   val_loss: 1.7933   
+<tf.Variable 'Nadam/learning_rate:0' shape=() dtype=float32, numpy=0.001>
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+20it [00:00, 26.74it/s]              
+                       
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+20it [00:00, 84.87it/s]              
+                       
+1.2782471179962158
+Epoch 001  -       loss: 1.5333   
+Validation -   val_loss: 1.8151   
+<tf.Variable 'Nadam/learning_rate:0' shape=() dtype=float32, numpy=0.001>
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+20it [00:00, 26.64it/s]              
+                       
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+20it [00:00, 87.45it/s]              
+                       
+1.2867507934570312
+Epoch 002  -       loss: 1.2236   
+Validation -   val_loss: 1.8707   
+<tf.Variable 'Nadam/learning_rate:0' shape=() dtype=float32, numpy=0.001>
+best AUCs: 
+       t  S_hat    AUC
+4  13.0  0.600  0.875
+0   0.0  1.000  0.500
+1   4.0  0.875  0.500
+cd auc uno: 0.55625
+brier score:  0.25918062495266375
+c index:  0.47619047619047616
+chi squared test failed with p value  0.006575404224792795
+d calibration:  0.28544963013784375
+INFO - ecarenet - Completed after 0:00:22

@@ -1,0 +1,192 @@
+INFO - ecarenet - Running command 'main'
+INFO - ecarenet - Started run with ID "12"
+2021-10-18 14:59:13.646067: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-10-18 14:59:13.646194: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcuda.so.1
+2021-10-18 14:59:13.646944: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:21:00.0 name: Quadro P1000 computeCapability: 6.1
+coreClock: 1.4805GHz coreCount: 5 deviceMemorySize: 3.94GiB deviceMemoryBandwidth: 74.65GiB/s
+2021-10-18 14:59:13.646971: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+2021-10-18 14:59:13.650141: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.11
+2021-10-18 14:59:13.650243: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.11
+2021-10-18 14:59:13.651472: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2021-10-18 14:59:13.651749: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2021-10-18 14:59:13.655010: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.10
+2021-10-18 14:59:13.655661: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.11
+2021-10-18 14:59:13.655817: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.8
+2021-10-18 14:59:13.656684: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0
+INFO - main - Num GPUs Available: 1
+2021-10-18 14:59:13.656976: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-10-18 14:59:13.657439: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-10-18 14:59:13.658138: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:21:00.0 name: Quadro P1000 computeCapability: 6.1
+coreClock: 1.4805GHz coreCount: 5 deviceMemorySize: 3.94GiB deviceMemoryBandwidth: 74.65GiB/s
+2021-10-18 14:59:13.658160: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+2021-10-18 14:59:13.658187: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.11
+2021-10-18 14:59:13.658207: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.11
+2021-10-18 14:59:13.658220: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2021-10-18 14:59:13.658231: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2021-10-18 14:59:13.658247: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.10
+2021-10-18 14:59:13.658259: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.11
+2021-10-18 14:59:13.658270: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.8
+2021-10-18 14:59:13.659297: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0
+2021-10-18 14:59:13.659324: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+2021-10-18 14:59:14.108500: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-10-18 14:59:14.108530: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      0 
+2021-10-18 14:59:14.108540: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 0:   N 
+2021-10-18 14:59:14.109443: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/device:GPU:0 with 2714 MB memory) -> physical GPU (device: 0, name: Quadro P1000, pci bus id: 0000:21:00.0, compute capability: 6.1)
+INFO - main - tensorflow version 2.4.3
+2021-10-18 14:59:14.130689: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-10-18 14:59:14.131109: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:21:00.0 name: Quadro P1000 computeCapability: 6.1
+coreClock: 1.4805GHz coreCount: 5 deviceMemorySize: 3.94GiB deviceMemoryBandwidth: 74.65GiB/s
+2021-10-18 14:59:14.131144: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+2021-10-18 14:59:14.131184: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.11
+2021-10-18 14:59:14.131199: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.11
+2021-10-18 14:59:14.131213: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2021-10-18 14:59:14.131227: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2021-10-18 14:59:14.131240: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.10
+2021-10-18 14:59:14.131254: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.11
+2021-10-18 14:59:14.131267: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.8
+2021-10-18 14:59:14.131723: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0
+2021-10-18 14:59:14.131750: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-10-18 14:59:14.131757: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      0 
+2021-10-18 14:59:14.131763: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 0:   N 
+2021-10-18 14:59:14.132248: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2714 MB memory) -> physical GPU (device: 0, name: Quadro P1000, pci bus id: 0000:21:00.0, compute capability: 6.1)
+INFO - root - model successfully compiled with optimizer {'name': 'Nadam', 'params': [{'learning_rate': 0.001}]} <tensorflow.python.keras.optimizer_v2.nadam.Nadam object at 0x7f7e4c02b6d8>
+
+  0%|          | 0/4 [00:00<?, ?it/s]2021-10-18 14:59:20.006979: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:116] None of the MLIR optimization passes are enabled (registered 2)
+2021-10-18 14:59:20.024182: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 3600000000 Hz
+2021-10-18 14:59:28.012770: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.11
+2021-10-18 14:59:28.217941: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.11
+2021-10-18 14:59:28.230208: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.8
+
+20it [00:10,  1.93it/s]              
+                       
+
+  0%|          | 0/4 [00:00<?, ?it/s]
+20it [00:01, 13.35it/s]              
+                       
+12.4281005859375
+Epoch 000  -       loss: 1.3612   
+Validation -   val_loss: 1.2066   
+<tf.Variable 'Nadam/learning_rate:0' shape=() dtype=float32, numpy=0.001>
+
+  0%|          | 0/4 [00:00<?, ?it/s]
+20it [00:00, 93.37it/s]              
+                       
+
+  0%|          | 0/4 [00:00<?, ?it/s]
+24it [00:00, 209.49it/s]             
+                        
+0.8308069705963135
+Epoch 001  -       loss: 1.2128   
+Validation -   val_loss: 1.2502   
+<tf.Variable 'Nadam/learning_rate:0' shape=() dtype=float32, numpy=0.001>
+
+  0%|          | 0/4 [00:00<?, ?it/s]
+20it [00:00, 92.92it/s]              
+                       
+
+  0%|          | 0/4 [00:00<?, ?it/s]
+23it [00:00, 221.65it/s]             
+                        
+0.911423921585083
+Epoch 002  -       loss: 1.3040   
+Validation -   val_loss: 1.1688   
+<tf.Variable 'Nadam/learning_rate:0' shape=() dtype=float32, numpy=0.001>
+
+  0%|          | 0/4 [00:00<?, ?it/s]
+20it [00:00, 103.49it/s]             
+                        
+
+  0%|          | 0/4 [00:00<?, ?it/s]
+24it [00:00, 219.72it/s]             
+                        
+0.8125016689300537
+Epoch 003  -       loss: 1.2950   
+Validation -   val_loss: 1.1564   
+<tf.Variable 'Nadam/learning_rate:0' shape=() dtype=float32, numpy=0.001>
+
+  0%|          | 0/4 [00:00<?, ?it/s]
+20it [00:00, 93.39it/s]              
+                       
+
+  0%|          | 0/4 [00:00<?, ?it/s]
+24it [00:00, 218.59it/s]             
+                        
+0.8671951293945312
+Epoch 004  -       loss: 1.2976   
+Validation -   val_loss: 1.2579   
+<tf.Variable 'Nadam/learning_rate:0' shape=() dtype=float32, numpy=0.001>
+
+  0%|          | 0/4 [00:00<?, ?it/s]
+20it [00:00, 96.66it/s]              
+                       
+
+  0%|          | 0/4 [00:00<?, ?it/s]
+23it [00:00, 194.43it/s]             
+                        
+0.8646016120910645
+Epoch 005  -       loss: 1.2769   
+Validation -   val_loss: 1.2082   
+<tf.Variable 'Nadam/learning_rate:0' shape=() dtype=float32, numpy=0.001>
+
+  0%|          | 0/4 [00:00<?, ?it/s]
+20it [00:00, 96.72it/s]              
+                       
+
+  0%|          | 0/4 [00:00<?, ?it/s]
+24it [00:00, 224.72it/s]             
+                        
+0.8059196472167969
+Epoch 006  -       loss: 1.2459   
+Validation -   val_loss: 1.1884   
+<tf.Variable 'Nadam/learning_rate:0' shape=() dtype=float32, numpy=0.001>
+
+  0%|          | 0/4 [00:00<?, ?it/s]
+20it [00:00, 106.90it/s]             
+                        
+
+  0%|          | 0/4 [00:00<?, ?it/s]
+23it [00:00, 200.32it/s]             
+                        
+0.8281204700469971
+Epoch 007  -       loss: 1.1220   
+Validation -   val_loss: 1.1802   
+<tf.Variable 'Nadam/learning_rate:0' shape=() dtype=float32, numpy=0.001>
+
+  0%|          | 0/4 [00:00<?, ?it/s]
+20it [00:00, 98.26it/s]              
+                       
+
+  0%|          | 0/4 [00:00<?, ?it/s]
+24it [00:00, 219.53it/s]             
+                        
+0.8110315799713135
+Epoch 008  -       loss: 1.1621   
+Validation -   val_loss: 1.2481   
+<tf.Variable 'Nadam/learning_rate:0' shape=() dtype=float32, numpy=0.001>
+
+  0%|          | 0/4 [00:00<?, ?it/s]
+20it [00:00, 100.26it/s]             
+                        
+
+  0%|          | 0/4 [00:00<?, ?it/s]
+24it [00:00, 215.02it/s]             
+                        
+0.8166279792785645
+Epoch 009  -       loss: 1.2320   
+Validation -   val_loss: 1.2548   
+<tf.Variable 'Nadam/learning_rate:0' shape=() dtype=float32, numpy=0.001>
+best AUCs: 
+       t  S_hat       AUC
+7  48.0  0.225  1.000000
+8  53.0  0.000  1.000000
+2   7.0  0.750  0.916667
+cd auc uno: 0.8285119047619047
+brier score:  0.14448409158693712
+c index:  0.7142857142857143
+chi squared test passed with p value  0.08747863399164572
+d calibration:  0.18910041224990373
+INFO - ecarenet - Completed after 0:00:34

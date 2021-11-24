@@ -1,0 +1,112 @@
+general:
+  label_type: &label_type # isup or bin or survival
+  number_of_classes: &n_classes # 6 or 2 or 28
+  image_directory: &directory # path to directory where images are
+  seed: &seed # set for reproducibility
+  image_channels: &img_channels # 3 for rgb
+  use_mongo_db: # leave blank if not used, else specify the url (e.g. db_name:PORT_NUMBER)
+
+# ------  ------  ------  ------  ------  ------  ------
+
+data_generation:
+  cache: # either None (leave blank) to cache to memory or /path/to/cache/folder where to cache dataset to memory
+  # CSV FILES
+  train_csv_file: #  full path to train.csv
+  train_batch_size: # int
+  valid_csv_file: #  full path to valid.csv
+  valid_batch_size: # int
+  test_csv_file: #  full path to test.csv (or also valid.csv during training)
+  # WHERE TO FIND INFORMATION IN CSV FILE AND WHAT INFORMATION TO USE
+  annotation_column: # column of the main class label, as it is called in csv file (isup, bin, relapse_time)
+  additional_columns: # list of dict with
+    # - internal_column_name: ['name_of_column_in_csv', 'input'] if used as additional input (like binary prediction)
+    # - internal_column_name: ['name_of_column_in_csv', 'label'] if used as additional label (like censoring status)
+    # - internal_column_name: ['name_of_column_in_csv', '-'] if just extra information (like age for inspection later)
+    # - censored: ['censored', 'label']
+  drop_cases: # list of lists
+    # - ['value_to_drop', 'internal_column_name'] if cases should be dropped based on target label (e.g. label -1)
+    # - ['value_to_drop', 'annotation_column'] if cases should be dropped based on additional column (e.g. age 0)
+    # - ['-1', 'censored']
+  # IMAGE PREPROCESSING
+  patching:
+    patch_size: # integer width and height of patch
+    overlap: # integer (0)
+    n_patches: &n_patches # integer how many patches to cut (if more than possible, additional patches are white)
+                           # 0 if no patching is wanted
+    order: # string: shuffle, original, ranked, shuffle_ranked
+    keep_original: # False or integer, if in addition to patches, the original image should be kept in dataset too
+  augmentation_config:
+     rotation: # float, degree to rotate (if random, max degree)
+     width_shift: # float
+     height_shift: # float
+     brightness: # float
+     horizontal_flip: # True or False (if random, put true to randomly flip or not)
+     vertical_flip: # True or False (if random, put true to randomly flip or not)
+     fill_mode: # 'constant' to fill new pixels with random value (e.g. after rotation)
+     cval: # color value to fill new pixels with , e.g. white: 255
+
+  random_augmentation: # False or True: if the augmentation should be random
+  resize_x: &resize_x
+  resize_y: &resize_y
+  resize: [*resize_x, *resize_y]   # leave blank, is filled automatically with values defined before
+  # GENERAL INFORMATION - leave blank, is all filled with values defined above
+  channels: *img_channels
+  directory: *directory
+  label_type: *label_type
+  number_of_classes: *n_classes
+  seed: *seed
+
+# ------  ------  ------  ------  ------  ------  ------
+
+model:
+  name: #m_bin, m_isup, ecare_net
+  base_model: # InceptionV3 or path/to/folder where model_json.json is stored
+  additional_input: # list, e.g. ['bin0', 'bin1'] to add prediction for relapse in first two years yes+no
+  dense_layer_nodes: # list of integers, e.g. [64]
+  rnn_layer_nodes: # list of integers, e.g. [256]
+  keras_model_params:
+    weights: # None or 'imagenet'
+    input_shape: [*resize_x, *resize_y, *img_channels] # input shape as list with [m,n,3] for rgb (no batch size) - blank!
+  n_patches: *n_patches
+  n_classes: *n_classes
+  # only used for survival model
+  mil_layer: # boolean
+  self_attention: # boolean
+  cut_off_layer: # int or name of layer after which model should be cut
+
+
+# ------  ------  ------  ------  ------  ------  ------
+
+training:
+  epochs: # int, how many epochs to train
+  initial_epoch: 0
+  monitor_val: &monitor_val # e.g. 'val_loss'
+  callbacks:
+    - name: # e.g. 'EarlyStopping'
+      params:
+        patience: #100
+        min_delta: #0.01
+        monitor: #*monitor_val
+        restore_best_weights: #true
+  optimizer: # dict
+    name: # String for tf.keras optimizer, e.g. 'Adam',
+    params: # list of additional parameters as dict
+      - learning_rate: # float
+  loss_fn: # string, either custom or tf.keras function, e.g. 'binary_crossentropy'
+  compile_metrics: # list of metrics, e.g. ['BinaryAccuracy']
+  compile_attributes: # dictionary with additional attributes like class_weight
+  model_save_path: # folder where model should be saved
+  class_weight: # True or False, whether to weight classes based on how often they are present in dataset
+  weighted_metrics:  # True or False, whether to weight metrics based on how often classes are present in dataset
+
+# ------  ------  ------  ------  ------  ------  ------
+
+evaluation:
+  metrics:
+    # - accuracy
+
+inference:
+  image_orig_size:
+  inference_id: 79
+  metrics: ['auc', 'brier', 'c_index']
+  eval_csv:
